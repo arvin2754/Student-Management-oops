@@ -8,55 +8,51 @@ import StudentManagementSystem.entity.Student;
 
 public class StudentService {
     List<Student> students = new ArrayList<Student>();
-    Scanner sc=new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
 
-    public void addStudent(){
+    public void addStudent() {
         System.out.print("Enter student id : ");
-        int id=sc.nextInt();
+        int id = sc.nextInt();
         System.out.println("");
 
         System.out.print("Enter Student name : ");
         sc.nextLine();
-        String name=sc.nextLine();
+        String name = sc.nextLine();
         System.out.println("");
 
         System.out.print("Enter student age :  ");
-        int age=sc.nextInt();
+        int age = sc.nextInt();
         System.out.println("");
 
         System.out.print("Enter student course : ");
         sc.nextLine();
-        String course=sc.nextLine();
+        String course = sc.nextLine();
         System.out.println("");
 
-        students.add(new Student(id,name,age,course));
+        students.add(new Student(id, name, age, course));
         System.out.println("Student added successfully");
         System.out.println("");
     }
 
-    public void showStudents(){
-        if(students.size()==0)
-        {
+    public void showStudents() {
+        if (students.size() == 0) {
             System.out.println("no student list is found");
             System.out.println("");
             return;
         }
-        for(Student student : students)
-        {
+        for (Student student : students) {
             System.out.println(student);
         }
         System.out.println("");
     }
 
-    public void updateStudent(){
+    public void updateStudent() {
         System.out.print("Enter id to update : ");
-        int id=sc.nextInt();
+        int id = sc.nextInt();
         sc.nextLine();
         System.out.println("");
-        for(Student student : students)
-        {
-            if(student.getId()==id)
-            {
+        for (Student student : students) {
+            if (student.getId() == id) {
                 System.out.print("Enter Student name : ");
                 student.setName(sc.nextLine());
                 System.out.println("");
@@ -77,26 +73,23 @@ public class StudentService {
         }
     }
 
-    public void deleteStudent()
-    {
+    public void deleteStudent() {
         System.out.print("Enter id to delete : ");
-        int id=sc.nextInt();
+        int id = sc.nextInt();
         System.out.println("");
 
-        students.remove(id==0?id:id-1);
+        students.remove(id == 0 ? id : id - 1);
         System.out.println("Student deleted Successfully");
         System.out.println("");
     }
 
-    public void studentbyRollNumber(){
+    public void studentbyRollNumber() {
         System.out.print("Enter Student id : ");
-        int id=sc.nextInt();
+        int id = sc.nextInt();
         System.out.println("");
 
-        for(Student student : students)
-        {
-            if(student.getId()==id)
-            {
+        for (Student student : students) {
+            if (student.getId() == id) {
                 student.displayStudent();
                 System.out.println("");
                 return;
