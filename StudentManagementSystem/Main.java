@@ -7,11 +7,13 @@ import StudentManagementSystem.service.StudentService;
 class Main {
 
     public Main() {
+        System.out.println("");
         System.out.println("Welcome to Student Management System");
         System.out.println("");
     }
 
     public static void main(String[] args) {
+        new Main();
         Scanner sc = new Scanner(System.in);
         StudentService s = new StudentService();
         boolean running = true;
